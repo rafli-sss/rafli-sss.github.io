@@ -1,0 +1,17 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "My Portfolio using TailwindCSS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/css/tailwind.css -o ./dist/css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/css/tailwind.css -o ./dist/css/style.css --minify"
+  },
+  "author": "Rafli Sugiarto",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "tailwindcss": "^3.3.3",
+    "tw-gutters": "^1.2.0"
+  }
+}
