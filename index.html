@@ -3,7 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rafli Sugiarto</title>
+    <meta
+      name="description"
+      content="I am a web developer who focuses on developing responsive, interactive, engaging and accessible websites. Check out my recent projects and learn more about my skills."
+    />
+    <meta
+      name="keywords"
+      content="web developer, front-end, back-end, laravel, php, javascript"
+    />
+    <meta name="author" content="Rafli Sugiarto" />
+    <meta property="og:title" content="Rafli Sugiarto - Web Developer" />
+    <meta
+      property="og:description"
+      content="I am a web developer who focuses on developing responsive, interactive, engaging and accessible websites. Check out my recent projects and learn more about my skills."
+    />
+    <meta
+      property="og:image"
+      content="https://rafli-sss.github.io/img/pfp.png"
+    />
+    <meta property="og:url" content="https://rafli-sss.github.io" />
+
+    <title>Rafli Sugiarto - Web Developer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -241,76 +261,66 @@
               @keyup.left="prevTab($el)"
               @keyup.right="nextTab($el)"
             >
-              <h3>
-                <button
-                  role="tab"
-                  class="tab-btn"
-                  id="tab-1"
-                  aria-controls="tabpanel-1"
-                  :tabindex="activeTab === 1 ? 0 : -1"
-                  :aria-selected="activeTab === 1"
-                  :class="{'active-tab-btn': activeTab === 1, 'inactive-tab-btn': activeTab !== 1}"
-                  @click="activeTab = 1"
-                >
-                  Programming language
-                </button>
-              </h3>
-              <h3>
-                <button
-                  role="tab"
-                  id="tab-2"
-                  class="tab-btn"
-                  aria-controls="tabpanel-2"
-                  :tabindex="activeTab === 2 ? 0 : -1"
-                  :aria-selected="activeTab === 2"
-                  :class="{'active-tab-btn': activeTab === 2, 'inactive-tab-btn': activeTab !== 2}"
-                  @click="activeTab = 2"
-                >
-                  Front End
-                </button>
-              </h3>
-              <h3>
-                <button
-                  role="tab"
-                  id="tab-3"
-                  class="tab-btn"
-                  aria-controls="tabpanel-3"
-                  :tabindex="activeTab === 3 ? 0 : -1"
-                  :aria-selected="activeTab === 3"
-                  :class="{'active-tab-btn': activeTab === 3, 'inactive-tab-btn': activeTab !== 3}"
-                  @click="activeTab = 3"
-                >
-                  Back End
-                </button>
-              </h3>
-              <h3>
-                <button
-                  role="tab"
-                  id="tab-4"
-                  class="tab-btn"
-                  aria-controls="tabpanel-4"
-                  :tabindex="activeTab === 4 ? 0 : -1"
-                  :aria-selected="activeTab === 4"
-                  :class="{'active-tab-btn': activeTab === 4, 'inactive-tab-btn': activeTab !== 4}"
-                  @click="activeTab = 4"
-                >
-                  Database
-                </button>
-              </h3>
-              <h3>
-                <button
-                  role="tab"
-                  id="tab-5"
-                  class="tab-btn"
-                  aria-controls="tabpanel-5"
-                  :tabindex="activeTab === 5 ? 0 : -1"
-                  :aria-selected="activeTab === 5"
-                  :class="{'active-tab-btn': activeTab === 5, 'inactive-tab-btn': activeTab !== 5}"
-                  @click="activeTab = 5"
-                >
-                  Other
-                </button>
-              </h3>
+              <button
+                role="tab"
+                class="tab-btn"
+                id="tab-1"
+                aria-controls="tabpanel-1"
+                :tabindex="activeTab === 1 ? 0 : -1"
+                :aria-selected="activeTab === 1"
+                :class="{'active-tab-btn': activeTab === 1, 'inactive-tab-btn': activeTab !== 1}"
+                @click="activeTab = 1"
+              >
+                Programming language
+              </button>
+              <button
+                role="tab"
+                id="tab-2"
+                class="tab-btn"
+                aria-controls="tabpanel-2"
+                :tabindex="activeTab === 2 ? 0 : -1"
+                :aria-selected="activeTab === 2"
+                :class="{'active-tab-btn': activeTab === 2, 'inactive-tab-btn': activeTab !== 2}"
+                @click="activeTab = 2"
+              >
+                Front End
+              </button>
+              <button
+                role="tab"
+                id="tab-3"
+                class="tab-btn"
+                aria-controls="tabpanel-3"
+                :tabindex="activeTab === 3 ? 0 : -1"
+                :aria-selected="activeTab === 3"
+                :class="{'active-tab-btn': activeTab === 3, 'inactive-tab-btn': activeTab !== 3}"
+                @click="activeTab = 3"
+              >
+                Back End
+              </button>
+              <button
+                role="tab"
+                id="tab-4"
+                class="tab-btn"
+                aria-controls="tabpanel-4"
+                :tabindex="activeTab === 4 ? 0 : -1"
+                :aria-selected="activeTab === 4"
+                :class="{'active-tab-btn': activeTab === 4, 'inactive-tab-btn': activeTab !== 4}"
+                @click="activeTab = 4"
+              >
+                Database
+              </button>
+              <button
+                role="tab"
+                id="tab-5"
+                class="tab-btn"
+                aria-controls="tabpanel-5"
+                :tabindex="activeTab === 5 ? 0 : -1"
+                :aria-selected="activeTab === 5"
+                :class="{'active-tab-btn': activeTab === 5, 'inactive-tab-btn': activeTab !== 5}"
+                @click="activeTab = 5"
+              >
+                Other
+              </button>
             </div>
             <ul
               role="tabpanel"
@@ -682,7 +692,7 @@
       </section>
       <section id="portfolio">
         <div class="container py-20">
-          <h2 class="heading-section" id="skill-heading">
+          <h2 class="heading-section">
             <span class="span-dark">My</span> portfolio
           </h2>
           <p class="mb-6 text-center text-xl">
@@ -841,7 +851,7 @@
                   <div class="mt-4 flex flex-wrap justify-between">
                     <div class="flex gap-4">
                       <a
-                        :href="modalData.repo"
+                        :href="modalData.repo || 'javascript:void(0)'"
                         target="_blank"
                         class="group"
                         aria-label="Link to this project's repository"
@@ -856,7 +866,7 @@
                         </svg>
                       </a>
                       <a
-                        :href="modalData.demo"
+                        :href="modalData.demo || 'javascript:void(0)'"
                         target="_blank"
                         class="group"
                         aria-label="Link to this project's demo"
