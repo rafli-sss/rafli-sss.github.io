@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-light text-dark transition-colors duration-300 dark:bg-dark dark:text-light;
+    @apply bg-light text-dark transition-colors duration-300 selection:bg-primary selection:text-white dark:bg-dark dark:text-light;
   }
 
   [x-cloak] {
@@ -27,11 +27,7 @@
   }
 
   .navbar {
-    @apply fixed inset-x-0 z-50 -translate-y-8 bg-light/75 opacity-0 shadow-md backdrop-blur-sm transition duration-300 ease-in dark:bg-dark/75 dark:shadow-light/5;
-  }
-
-  .navbar-show {
-    @apply translate-y-0 opacity-100 ease-out;
+    @apply fixed inset-x-0 z-50 bg-light/75 shadow-md backdrop-blur-sm dark:bg-dark/75 dark:shadow-light/5;
   }
 
   .navbar-nav {
@@ -72,7 +68,7 @@
   /* Button */
   .link-btn-primary,
   .btn-primary {
-    @apply rounded-lg border-2 border-primary;
+    @apply rounded-lg border-2 border-primary focus:outline-none;
   }
 
   .btn-primary {
@@ -93,12 +89,12 @@
 
   .link-btn-inner,
   .link-btn-inner-lg {
-    @apply group-hover:-translate-x-1 group-hover:-translate-y-1;
+    @apply group-hover:-translate-x-1 group-hover:-translate-y-1 group-focus:-translate-x-1 group-focus:-translate-y-1;
   }
 
   .btn-inner,
   .btn-inner-lg {
-    @apply group-enabled:group-hover:-translate-x-1 group-enabled:group-hover:-translate-y-1;
+    @apply group-enabled:group-hover:-translate-x-1 group-enabled:group-hover:-translate-y-1 group-enabled:group-focus:-translate-x-1 group-enabled:group-focus:-translate-y-1;
   }
 
   .btn-inner-lg,
@@ -107,7 +103,7 @@
   }
 
   .tab-btn {
-    @apply border-b-2 px-4 py-2;
+    @apply cursor-pointer border-b-2 px-4 py-2 aria-selected:cursor-auto;
   }
 
   .toggle-btn,
@@ -197,7 +193,7 @@
   }
 
   .input-primary {
-    @apply block w-full rounded-md bg-zinc-300/75 px-4 py-2 placeholder:text-dark/25 dark:bg-zinc-700/75 dark:placeholder:text-light/25;
+    @apply block w-full rounded-md bg-zinc-300/75 px-4 py-2 caret-primary placeholder:text-dark/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:bg-zinc-700/75 dark:caret-primary-dark dark:placeholder:text-light/25 dark:focus-visible:ring-primary-dark;
   }
 
   .input-required {

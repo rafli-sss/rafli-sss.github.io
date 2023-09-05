@@ -52,10 +52,22 @@
     ></script>
   </head>
   <body x-data="{ showNavbar: false }">
-    <header class="navbar" x-cloak :class="{'navbar-show': showNavbar}">
+    <a href="#main" class="sr-only">Skip to main content</a>
+    <header
+      class="navbar"
+      x-cloak
+      x-show="showNavbar"
+      x-transition:enter="transition duration-300 ease-out"
+      x-transition:enter-start="opacity-0 -translate-y-8"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition duration-300 ease-in"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-8"
+    >
       <div class="container py-4">
         <nav
           class="flex items-center justify-between"
+          aria-label="main"
           x-data="{
               isOpen: false,
               get isLargeViewport() { return window.innerWidth >= 768 }
@@ -150,7 +162,7 @@
         </nav>
       </div>
     </header>
-    <main>
+    <main id="main">
       <section
         id="hero"
         x-intersect.half="showNavbar = false"
@@ -224,7 +236,12 @@
             <div
               class="flex w-full flex-initial justify-center lg:w-1/2 lg:justify-end xl:w-5/12"
             >
-              <img src="img/pfp.png" class="w-96" alt="Rafli profile picture" />
+              <img
+                src="img/pfp.png"
+                intrinsicsize="384x362"
+                alt="Rafli profile picture"
+                class="w-96"
+              />
             </div>
           </div>
         </div>
@@ -261,7 +278,7 @@
               @keyup.left="prevTab($el)"
               @keyup.right="nextTab($el)"
             >
-              <button
+              <h3
                 role="tab"
                 class="tab-btn"
                 id="tab-1"
@@ -272,8 +289,8 @@
                 @click="activeTab = 1"
               >
                 Programming language
-              </button>
-              <button
+              </h3>
+              <h3
                 role="tab"
                 id="tab-2"
                 class="tab-btn"
@@ -284,8 +301,8 @@
                 @click="activeTab = 2"
               >
                 Front End
-              </button>
-              <button
+              </h3>
+              <h3
                 role="tab"
                 id="tab-3"
                 class="tab-btn"
@@ -296,8 +313,8 @@
                 @click="activeTab = 3"
               >
                 Back End
-              </button>
-              <button
+              </h3>
+              <h3
                 role="tab"
                 id="tab-4"
                 class="tab-btn"
@@ -308,8 +325,8 @@
                 @click="activeTab = 4"
               >
                 Database
-              </button>
-              <button
+              </h3>
+              <h3
                 role="tab"
                 id="tab-5"
                 class="tab-btn"
@@ -320,9 +337,9 @@
                 @click="activeTab = 5"
               >
                 Other
-              </button>
+              </h3>
             </div>
-            <ul
+            <div
               role="tabpanel"
               class="tab-panel"
               id="tabpanel-1"
@@ -330,7 +347,7 @@
               aria-labelledby="tab-1"
               :class="{'hidden': activeTab !== 1}"
             >
-              <li class="tab-panel-item">
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -342,14 +359,14 @@
                       <use href="#javascript-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">JavaScript</span>
+                  <h4 class="skill-card-title">JavaScript</h4>
                   <p>
                     My first programming language. Javascript will make the
                     website more interactive. Thus, I frequently use it.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -361,17 +378,17 @@
                       <use href="#php-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title"
-                    ><abbr title="Hypertext Preprocessor">PHP</abbr></span
-                  >
+                  <h4 class="skill-card-title">
+                    <abbr title="Hypertext Preprocessor">PHP</abbr>
+                  </h4>
                   <p>
                     My second programming language. I learned Object Oriented
                     Programming from here.
                   </p>
                 </div>
-              </li>
-            </ul>
-            <ul
+              </div>
+            </div>
+            <div
               role="tabpanel"
               class="tab-panel"
               id="tabpanel-2"
@@ -379,7 +396,7 @@
               aria-labelledby="tab-2"
               :class="{'hidden': activeTab !== 2}"
             >
-              <li class="tab-panel-item">
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -391,16 +408,16 @@
                       <use href="#html-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title"
-                    ><abbr title="HyperText Markup Language">HTML</abbr></span
-                  >
+                  <h4 class="skill-card-title">
+                    <abbr title="HyperText Markup Language">HTML</abbr>
+                  </h4>
                   <p>
                     As the layout of website, I optimize it by using semantic
                     tags, ensuring accessibility, and proper structure.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -412,16 +429,16 @@
                       <use href="#css-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title"
-                    ><abbr title="Cascading Style Sheets">CSS</abbr></span
-                  >
+                  <h4 class="skill-card-title">
+                    <abbr title="Cascading Style Sheets">CSS</abbr>
+                  </h4>
                   <p>
                     The web won't look aesthetically pleasing solely with HTML,
                     necessitating the usage of CSS for styling.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -433,14 +450,14 @@
                       <use href="#bootstrap-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">Bootstrap</span>
+                  <h4 class="skill-card-title">Bootstrap</h4>
                   <p>
                     My first front-end framework is pleasing because it's
                     beginner-friendly and has plentiful pre-made components.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -452,14 +469,14 @@
                       <use href="#tailwindcss-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">Tailwind CSS</span>
+                  <h4 class="skill-card-title">Tailwind CSS</h4>
                   <p>
                     A utility-first CSS framework. I appreciate it so much that
                     it's now part of my tech stack.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -471,15 +488,15 @@
                       <use href="#jquery-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">jQuery</span>
+                  <h4 class="skill-card-title">jQuery</h4>
                   <p>
                     Javascript library to interact with the
                     <abbr title="Document Object Model">DOM</abbr>. Though it is
                     fun and easy to use, I seldom use it nowadays.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -491,16 +508,16 @@
                       <use href="#alpinejs-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">Alpine.js</span>
+                  <h4 class="skill-card-title">Alpine.js</h4>
                   <p>
                     I utilize as it streamlines the process of developing
                     accessible components. Its ease-of-use and functionality
                     make it an essential part of my tech stack.
                   </p>
                 </div>
-              </li>
-            </ul>
-            <ul
+              </div>
+            </div>
+            <div
               role="tabpanel"
               class="tab-panel"
               id="tabpanel-3"
@@ -508,7 +525,7 @@
               aria-labelledby="tab-3"
               :class="{'hidden': activeTab !== 3}"
             >
-              <li class="tab-panel-item">
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -520,14 +537,14 @@
                       <use href="#codeigniter-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">CodeIgniter</span>
+                  <h4 class="skill-card-title">CodeIgniter</h4>
                   <p>
                     My first PHP framework. It is lightweight, easy-to-use, and
                     utilizes the MVC concept. I appreciate its simplicity.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -539,15 +556,15 @@
                       <use href="#laravel-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">Laravel</span>
+                  <h4 class="skill-card-title">Laravel</h4>
                   <p>
                     My preferred PHP framework. It has a great environment and
                     is particularly well-suited for medium-to-large-scale
                     websites, making it an integral part of my tech stack.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -559,15 +576,15 @@
                       <use href="#nodejs-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">Node.js</span>
+                  <h4 class="skill-card-title">Node.js</h4>
                   <p>
                     Javascript runtime environment that can run Javascript code
                     outside the browser. I'm a little interested in it and am
                     currently learning about it.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -579,15 +596,15 @@
                       <use href="#express-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">Express</span>
+                  <h4 class="skill-card-title">Express</h4>
                   <p>
                     Node.js web framework. I'm also learning it along with
                     Node.js.
                   </p>
                 </div>
-              </li>
-            </ul>
-            <ul
+              </div>
+            </div>
+            <div
               role="tabpanel"
               class="tab-panel"
               id="tabpanel-4"
@@ -595,7 +612,7 @@
               aria-labelledby="tab-4"
               :class="{'hidden': activeTab !== 4}"
             >
-              <li class="tab-panel-item">
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -607,7 +624,7 @@
                       <use href="#mysql-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">MySQL</span>
+                  <h4 class="skill-card-title">MySQL</h4>
                   <p>
                     My first
                     <abbr title="Relational DataBase Managament System"
@@ -619,8 +636,8 @@
                     for now.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -632,15 +649,15 @@
                       <use href="#mongodb-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">MongoDB</span>
+                  <h4 class="skill-card-title">MongoDB</h4>
                   <p>
                     Document-oriented NoSQL database program. I am currently
                     studying it.
                   </p>
                 </div>
-              </li>
-            </ul>
-            <ul
+              </div>
+            </div>
+            <div
               role="tabpanel"
               class="tab-panel"
               id="tabpanel-5"
@@ -648,7 +665,7 @@
               aria-labelledby="tab-5"
               :class="{'hidden': activeTab !== 5}"
             >
-              <li class="tab-panel-item">
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -660,14 +677,14 @@
                       <use href="#git-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">Git</span>
+                  <h4 class="skill-card-title">Git</h4>
                   <p>
                     A distributed version control system tracks changes to the
                     code. Despite not having mastered it yet, I use it.
                   </p>
                 </div>
-              </li>
-              <li class="tab-panel-item">
+              </div>
+              <div class="tab-panel-item">
                 <div class="skill-card">
                   <div class="skill-card-icon" aria-hidden="true">
                     <svg
@@ -679,14 +696,14 @@
                       <use href="#linux-svg"></use>
                     </svg>
                   </div>
-                  <span class="skill-card-title">Linux</span>
+                  <h4 class="skill-card-title">Linux</h4>
                   <p>
                     I use Linux on a daily basis, so I am somewhat familiar with
                     the its environment.
                   </p>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -738,6 +755,7 @@
                   :src="data.img"
                   class="portfolio-img"
                   :alt="data.title"
+                  intrinsicsize="314x210"
                   loading="lazy"
                 />
                 <span class="portfolio-text">
@@ -764,6 +782,7 @@
                   :src="data.img"
                   class="portfolio-img"
                   :alt="data.title"
+                  intrinsicsize="314x210"
                   loading="lazy"
                 />
                 <span class="portfolio-text">
@@ -790,6 +809,7 @@
                   :src="data.img"
                   class="portfolio-img"
                   :alt="data.title"
+                  intrinsicsize="314x210"
                   loading="lazy"
                 />
                 <span class="portfolio-text">
@@ -806,7 +826,7 @@
                   data: {
                     img: 'img/portfolio-sample.jpg', 
                     title: 'Lorem ipsum', 
-                    techStack: ['html', 'css', 'js'], 
+                    techStack: ['html', 'css', 'javascript'], 
                     desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, repudiandae?'
                   }
                 }"
@@ -816,6 +836,7 @@
                   :src="data.img"
                   class="portfolio-img"
                   :alt="data.title"
+                  intrinsicsize="314x210"
                   loading="lazy"
                 />
                 <span class="portfolio-text">
