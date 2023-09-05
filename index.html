@@ -12,6 +12,8 @@
       content="web developer, front-end, back-end, laravel, php, javascript"
     />
     <meta name="author" content="Rafli Sugiarto" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rafli-sss.github.io" />
     <meta property="og:title" content="Rafli Sugiarto - Web Developer" />
     <meta
       property="og:description"
@@ -21,18 +23,33 @@
       property="og:image"
       content="https://rafli-sss.github.io/img/pfp.png"
     />
-    <meta property="og:url" content="https://rafli-sss.github.io" />
 
     <title>Rafli Sugiarto - Web Developer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Noto+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
-    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="preload"
+      href="./css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="./css/style.css" />
+    </noscript>
 
     <script
       defer
@@ -278,7 +295,7 @@
               @keyup.left="prevTab($el)"
               @keyup.right="nextTab($el)"
             >
-              <h3
+              <button
                 role="tab"
                 class="tab-btn"
                 id="tab-1"
@@ -289,8 +306,8 @@
                 @click="activeTab = 1"
               >
                 Programming language
-              </h3>
-              <h3
+              </button>
+              <button
                 role="tab"
                 id="tab-2"
                 class="tab-btn"
@@ -301,8 +318,8 @@
                 @click="activeTab = 2"
               >
                 Front End
-              </h3>
-              <h3
+              </button>
+              <button
                 role="tab"
                 id="tab-3"
                 class="tab-btn"
@@ -313,8 +330,8 @@
                 @click="activeTab = 3"
               >
                 Back End
-              </h3>
-              <h3
+              </button>
+              <button
                 role="tab"
                 id="tab-4"
                 class="tab-btn"
@@ -325,8 +342,8 @@
                 @click="activeTab = 4"
               >
                 Database
-              </h3>
-              <h3
+              </button>
+              <button
                 role="tab"
                 id="tab-5"
                 class="tab-btn"
@@ -337,7 +354,7 @@
                 @click="activeTab = 5"
               >
                 Other
-              </h3>
+              </button>
             </div>
             <div
               role="tabpanel"
@@ -359,7 +376,7 @@
                       <use href="#javascript-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">JavaScript</h4>
+                  <span class="skill-card-title">JavaScript</span>
                   <p>
                     My first programming language. Javascript will make the
                     website more interactive. Thus, I frequently use it.
@@ -378,9 +395,9 @@
                       <use href="#php-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">
+                  <span class="skill-card-title">
                     <abbr title="Hypertext Preprocessor">PHP</abbr>
-                  </h4>
+                  </span>
                   <p>
                     My second programming language. I learned Object Oriented
                     Programming from here.
@@ -408,9 +425,9 @@
                       <use href="#html-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">
+                  <span class="skill-card-title">
                     <abbr title="HyperText Markup Language">HTML</abbr>
-                  </h4>
+                  </span>
                   <p>
                     As the layout of website, I optimize it by using semantic
                     tags, ensuring accessibility, and proper structure.
@@ -429,9 +446,9 @@
                       <use href="#css-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">
+                  <span class="skill-card-title">
                     <abbr title="Cascading Style Sheets">CSS</abbr>
-                  </h4>
+                  </span>
                   <p>
                     The web won't look aesthetically pleasing solely with HTML,
                     necessitating the usage of CSS for styling.
@@ -450,7 +467,7 @@
                       <use href="#bootstrap-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">Bootstrap</h4>
+                  <span class="skill-card-title">Bootstrap</span>
                   <p>
                     My first front-end framework is pleasing because it's
                     beginner-friendly and has plentiful pre-made components.
@@ -469,7 +486,7 @@
                       <use href="#tailwindcss-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">Tailwind CSS</h4>
+                  <span class="skill-card-title">Tailwind CSS</span>
                   <p>
                     A utility-first CSS framework. I appreciate it so much that
                     it's now part of my tech stack.
@@ -488,7 +505,7 @@
                       <use href="#jquery-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">jQuery</h4>
+                  <span class="skill-card-title">jQuery</span>
                   <p>
                     Javascript library to interact with the
                     <abbr title="Document Object Model">DOM</abbr>. Though it is
@@ -508,7 +525,7 @@
                       <use href="#alpinejs-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">Alpine.js</h4>
+                  <span class="skill-card-title">Alpine.js</span>
                   <p>
                     I utilize as it streamlines the process of developing
                     accessible components. Its ease-of-use and functionality
@@ -537,7 +554,7 @@
                       <use href="#codeigniter-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">CodeIgniter</h4>
+                  <span class="skill-card-title">CodeIgniter</span>
                   <p>
                     My first PHP framework. It is lightweight, easy-to-use, and
                     utilizes the MVC concept. I appreciate its simplicity.
@@ -556,7 +573,7 @@
                       <use href="#laravel-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">Laravel</h4>
+                  <span class="skill-card-title">Laravel</span>
                   <p>
                     My preferred PHP framework. It has a great environment and
                     is particularly well-suited for medium-to-large-scale
@@ -576,7 +593,7 @@
                       <use href="#nodejs-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">Node.js</h4>
+                  <span class="skill-card-title">Node.js</span>
                   <p>
                     Javascript runtime environment that can run Javascript code
                     outside the browser. I'm a little interested in it and am
@@ -596,7 +613,7 @@
                       <use href="#express-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">Express</h4>
+                  <span class="skill-card-title">Express</span>
                   <p>
                     Node.js web framework. I'm also learning it along with
                     Node.js.
@@ -624,7 +641,7 @@
                       <use href="#mysql-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">MySQL</h4>
+                  <span class="skill-card-title">MySQL</span>
                   <p>
                     My first
                     <abbr title="Relational DataBase Managament System"
@@ -649,7 +666,7 @@
                       <use href="#mongodb-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">MongoDB</h4>
+                  <span class="skill-card-title">MongoDB</span>
                   <p>
                     Document-oriented NoSQL database program. I am currently
                     studying it.
@@ -677,7 +694,7 @@
                       <use href="#git-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">Git</h4>
+                  <span class="skill-card-title">Git</span>
                   <p>
                     A distributed version control system tracks changes to the
                     code. Despite not having mastered it yet, I use it.
@@ -696,7 +713,7 @@
                       <use href="#linux-svg"></use>
                     </svg>
                   </div>
-                  <h4 class="skill-card-title">Linux</h4>
+                  <span class="skill-card-title">Linux</span>
                   <p>
                     I use Linux on a daily basis, so I am somewhat familiar with
                     the its environment.
@@ -1198,7 +1215,7 @@
       <svg id="bootstrap-svg">
         <title>Bootstrap</title>
         <path
-          d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z"
+          d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5span.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172span.181c2.218 0 3.553-1.086 3.553-2.876z"
         />
       </svg>
       <svg id="tailwindcss-svg">
@@ -1269,7 +1286,7 @@
       </svg>
       <svg id="submit-svg">
         <path
-          d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
+          d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5span.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
         />
       </svg>
       <svg id="loading-svg">
@@ -1284,7 +1301,7 @@
         <path
           class="opacity-75"
           fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12spanzm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
         ></path>
       </svg>
       <svg id="check-svg">
