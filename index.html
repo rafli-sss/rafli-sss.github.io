@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -883,7 +883,7 @@
                     <div class="flex gap-4">
                       <a
                         :href="modalData.repo || 'javascript:void(0)'"
-                        target="_blank"
+                        :target="modalData.repo ? '_blank' : '_self'"
                         class="group"
                         aria-label="Link to this project's repository"
                       >
@@ -898,7 +898,7 @@
                       </a>
                       <a
                         :href="modalData.demo || 'javascript:void(0)'"
-                        target="_blank"
+                        :target="modalData.repo ? '_blank' : '_self'"
                         class="group"
                         aria-label="Link to this project's demo"
                       >
