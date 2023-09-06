@@ -41,15 +41,7 @@
       />
     </noscript>
 
-    <link
-      rel="preload"
-      href="./css/style.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link rel="stylesheet" href="./css/style.css" />
-    </noscript>
+    <link rel="stylesheet" href="./css/style.css" />
 
     <script
       defer
@@ -257,6 +249,7 @@
                 src="img/pfp.png"
                 intrinsicsize="384x362"
                 alt="Rafli profile picture"
+                loading="lazy"
                 class="w-96"
               />
             </div>
@@ -1063,6 +1056,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     role="img"
+                    aria-hidden="true"
                     class="h-8 w-8"
                     :class="response === 'sending' ? 'animate-spin' : 'fill-current'"
                   >
@@ -1091,6 +1085,7 @@
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                   class="contact-icon"
                 >
                   <use href="#linkedin-svg"></use>
@@ -1108,6 +1103,7 @@
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                   class="contact-icon"
                 >
                   <use href="#facebook-svg"></use>
@@ -1125,6 +1121,7 @@
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                   class="contact-icon"
                 >
                   <use href="#instagram-svg"></use>
@@ -1142,6 +1139,7 @@
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                   class="contact-icon"
                 >
                   <use href="#gmail-svg"></use>
@@ -1159,6 +1157,7 @@
                   role="img"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                   class="contact-icon"
                 >
                   <use href="#github-svg"></use>
@@ -1286,7 +1285,7 @@
       </svg>
       <svg id="submit-svg">
         <path
-          d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5span.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
+          d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
         />
       </svg>
       <svg id="loading-svg">
